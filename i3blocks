@@ -1,0 +1,40 @@
+#command=$SCRIPT_DIR/$BLOCK_NAME
+align=center
+separator_block_width=15
+
+[window title]
+command=xdotool getactivewindow getwindowname
+interval=repeat
+color=#6699CC
+min_width=550
+align=center
+
+[wifi]
+command=~/scripts/i3blocks/wifi
+interval=10
+label= 
+
+[mousepad]
+command=~/scripts/i3blocks/mousepad
+interval=1
+label=
+
+[brightness]
+command=xbacklight -get | cut -c1-2
+interval=1
+label= 
+
+[volume]
+command=pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'
+label= 
+interval=1
+
+[battery]
+interval=10
+command=~/scripts/i3blocks/battery
+
+[time]
+# command=date '+%Y-%MM-%d %H:%M'
+command=date '+%d %b  %H:%M'
+interval=1
+label=

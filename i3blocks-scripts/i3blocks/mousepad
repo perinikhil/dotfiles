@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use utf8;
+use open ':std', ':encoding(UTF-8)';
+
+my $full_text;
+my $color;
+my $result = `synclient -l | grep "TouchpadOff .*=.*0"`;
+if($result) {
+  $full_text = "";
+  $color = "#6699CC\n";
+}
+else { 
+  $full_text = "";
+  $color = "#EC5F67\n";
+}
+
+print "$full_text\n";
+print "$full_text\n";
+print "$color\n";
+exit(0);
