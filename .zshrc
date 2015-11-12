@@ -49,7 +49,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm rvm zsh-syntax-highlighting)
+plugins=(git nvm rvm zsh-syntax-highlighting z)
 
 # User configuration
 DEFAULT_USER="peri"
@@ -87,3 +87,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-oceanicnext.dark.sh"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vi="nvim"
+alias zshrc="vi ~/.zshrc"
+alias vimrc="vi ~/.vimrc"
+alias i3config="sudo vi ~/.config/i3/config"

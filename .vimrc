@@ -15,6 +15,7 @@
   set cursorline
   set showcmd
   set mouse=
+  filetype plugin indent on
   inoremap <Esc> <nop>
   inoremap kj <Esc>
   nnoremap <leader>s :w<CR>
@@ -58,35 +59,23 @@
   nnoremap <Leader>a :bprevious<CR>
   nnoremap <Leader>w :bd <Bar> bprevious<CR>
 
-"neobundle
-if 0 | endif
+"vim-plug
+  call plug#begin('~/.vim/plugged')
 
-if has('vim_starting')
-  if &compatible
-    set nocompatible
-  endif
+Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'bling/vim-airline'
+Plug 'othree/yajs.vim'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/syntastic'
+"Plug 'Valloric/YouCompleteMe'
+Plug 'mattn/emmet-vim'
+Plug 'ntpeters/vim-better-whitespace'
 
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
+Plug 'terryma/vim-multiple-cursors'
 
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'othree/yajs.vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'scrooloose/syntastic'
-"NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'ntpeters/vim-better-whitespace'
-NeoBundle 'terryma/vim-multiple-cursors'
-
-call neobundle#end()
-filetype plugin indent on
-NeoBundleCheck
+call plug#end()
 
 "--nerdtree
   nnoremap <C-n> :NERDTreeToggle<Enter>

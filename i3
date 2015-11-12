@@ -11,7 +11,7 @@ exec --no-startup-id pactl set-sink-volume 0 50%
 exec --no-startup-id pulseaudio-equalizer disable
 exec_always --no-startup-id ~/scripts/screens.sh
 exec --no-startup-id feh --bg-scale /home/peri/.wallpaper.jpg
-exec --no-startup-id xset r rate 250 22k
+exec --no-startup-id xset r rate 250 25
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
