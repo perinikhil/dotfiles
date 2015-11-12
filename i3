@@ -9,8 +9,9 @@
 exec --no-startup-id xbacklight -set 50%
 exec --no-startup-id pactl set-sink-volume 0 50%
 exec --no-startup-id pulseaudio-equalizer disable
-exec --no-startup-id xrandr --output LVDS1 --mode 1360x768 --pos 0x768 --output HDMI1 --mode 1360x768 --pos 0x0 
+exec --no-startup-id xrandr --output LVDS1 --primary --mode 1360x768 --pos 0x768 --output HDMI1 --mode 1360x768 --pos 0x0
 exec --no-startup-id feh --bg-scale /home/peri/.wallpaper.jpg
+exec --no-startup-id xset r rate 250 22k
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -210,4 +211,4 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym Pause exec ~/.backlight.sh
 
 # multimonitor setting
-# exec --no-startup-id xrandr --output HDMI1 --auto --right-of LVDS1 
+# exec --no-startup-id xrandr --output HDMI1 --auto --right-of LVDS1
