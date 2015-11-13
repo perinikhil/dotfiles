@@ -6,7 +6,7 @@
   colorscheme base16-oceanicnext
 
 " general
-  let mapleader = ","
+  let mapleader = "\<Space>"
   set nowrap
   set timeoutlen=500 ttimeoutlen=0
   set history=1000
@@ -18,7 +18,8 @@
   filetype plugin indent on
   inoremap <Esc> <nop>
   inoremap kj <Esc>
-  nnoremap <leader>s :w<CR>
+  nnoremap <leader>w :w<CR>
+  nnoremap <leader>q :q<CR>
 
 " stay in vmode on indent
   vnoremap < <gv
@@ -35,7 +36,6 @@
   set expandtab
   set shiftround
   set smartindent
-
 
 " search settings
   set hlsearch
@@ -57,24 +57,23 @@
   set hidden
   nnoremap <Leader>f :bnext<CR>
   nnoremap <Leader>a :bprevious<CR>
-  nnoremap <Leader>w :bd <Bar> bprevious<CR>
+  nnoremap <Leader>q :bd <Bar> bprevious<CR>
 
 "vim-plug
   call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
 Plug 'othree/yajs.vim'
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
 "Plug 'Valloric/YouCompleteMe'
 Plug 'mattn/emmet-vim'
 Plug 'ntpeters/vim-better-whitespace'
-
 Plug 'terryma/vim-multiple-cursors'
-
+Plug 'Raimondi/delimitMate'
 call plug#end()
 
 "--nerdtree
@@ -93,16 +92,12 @@ call plug#end()
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#tabline#tab_nr_type = 1
   set laststatus=2
-"--syntastic
-  set statusline+=%#warningmsg#
-  set statusline+=%{SyntasticStatuslineFlag()}
-  set statusline+=%*
-  let g:syntastic_auto_loc_list = 1
-  let g:syntastic_loc_list_height = 5
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_javascript_checkers = ['standard']
-  let g:syntastic_javascript_standard_exec = 'semistandard'
-  let g:syntastic_javascript_standard_generic = 1
+"--neomake
+  let g:neomake_javascript_semistandard_maker = {
+    \ 'errorformat': '  %f:%l:%c: %m',
+  \}
+  let g:neomake_javascript_enabled_makers = ['semistandard']
+  autocmd! BufWritePost * Neomake
 "--better-whitespace
   autocmd BufWritePre * StripWhitespace
 "--multiple-cursor
@@ -111,5 +106,3 @@ call plug#end()
   let g:multi_cursor_prev_key='<C-x>'
   "let g:multi_cursor_skip_key='<C-x>'
   let g:multi_cursor_quit_key='<Esc>'
-
-
