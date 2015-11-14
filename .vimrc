@@ -6,7 +6,7 @@
   let base16colorspace=256
   syntax enable
   set t_Co=256
-  colorscheme base16-oceanicnext
+  colorscheme dracula
 
 " general
   let mapleader = "\<Space>"
@@ -14,10 +14,12 @@
   set timeoutlen=500 ttimeoutlen=0
   set history=1000
   set undolevels=1000
+  set number
   set relativenumber
   set cursorline
   set showcmd
   set mouse=
+  set scrolloff=5
   filetype plugin indent on
   inoremap <Esc> <nop>
   inoremap kj <Esc>
@@ -61,7 +63,7 @@
   nnoremap <Leader>f :bnext<CR>
   nnoremap <Leader>a :bprevious<CR>
   nnoremap <Leader>q :bd <Bar> bprevious<CR>
-  nnoremap <Leader>t :tabnew<CR>
+  nnoremap <Leader>t :enew<CR>
 
 " vim-plug
   call plug#begin('~/.vim/plugged')
@@ -81,7 +83,6 @@
   Plug 'ervandew/supertab'
   Plug 'scrooloose/nerdcommenter'
 
-
   call plug#end()
 
   "--nerdtree
@@ -98,14 +99,19 @@
   "--airline
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#tab_nr_type = 1
     set laststatus=2
   "--neomake
+    let g:neomake_open_list = 2
+    let g:neomake_list_height = 3
+    autocmd! BufWritePost * Neomake
+    let g:neomake_error_sign = {
+      \ 'text': '✖>',
+      \ 'texthl': 'SignifySignDelete',
+    \ }
     let g:neomake_javascript_semistandard_maker = {
       \ 'errorformat': '  %f:%l:%c: %m',
     \}
     let g:neomake_javascript_enabled_makers = ['semistandard']
-    autocmd! BufWritePost * Neomake
   "--better-whitespace
     autocmd BufWritePre * StripWhitespace
   "--multiple-cursor
