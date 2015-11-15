@@ -6,6 +6,7 @@
   let base16colorspace=256
   syntax enable
   set t_Co=256
+  " colorscheme base16-oceanicnext
   colorscheme dracula
 
 " general
@@ -99,6 +100,7 @@
   "--airline
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tabline#enabled = 1
+    let g:airline_theme = 'badwolf'
     set laststatus=2
   "--neomake
     let g:neomake_open_list = 2
