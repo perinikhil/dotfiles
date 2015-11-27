@@ -6,7 +6,6 @@ let s:N3   = [ '' , '' , 20  , 15 ]
 let g:airline#themes#oceanicnext#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
 
 let g:airline#themes#oceanicnext#palette.normal_modified = {
-      \ 'airline_a': [ '' , '' , 15 , 16 , '' ] ,
       \ 'airline_c': [ '' , '' , 16 , 15 , '' ] ,
       \ }
 

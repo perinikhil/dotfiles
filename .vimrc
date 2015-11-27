@@ -132,3 +132,4 @@
     let delimitMate_expand_space = 1
   "--nerdcommenter
     let NERDSpaceDelims=1
+    nnoremap <leader>/ :call NERDComment(0, 'Toggle')<CR>
