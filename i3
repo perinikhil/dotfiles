@@ -6,9 +6,9 @@
 #
 
 # startup commands
-exec --no-startup-id xbacklight -set 35%
+exec --no-startup-id xbacklight -set 30%
 exec --no-startup-id pactl set-sink-volume 0 50%
-exec --no-startup-id pulseaudio-equalizer disable
+exec_always --no-startup-id pulseaudio-equalizer disable
 exec --no-startup-id sh ~/scripts/screens.sh
 exec_always --no-startup-id feh --bg-scale /home/peri/.wallpaper.jpg
 exec_always --no-startup-id xset r rate 220 30
