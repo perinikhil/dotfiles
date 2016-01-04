@@ -11,7 +11,7 @@ exec --no-startup-id pactl set-sink-volume 0 50%
 exec_always --no-startup-id pulseaudio-equalizer disable
 exec --no-startup-id sh ~/scripts/screens.sh
 exec_always --no-startup-id feh --bg-scale /home/peri/.wallpaper.jpg
-exec_always --no-startup-id xset r rate 220 30
+exec_always --no-startup-id xset r rate 220 40
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -46,8 +46,8 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
-bindsym $mod+Tab exec rofi -show window
+bindsym $mod+d exec rofi -show run -lines 4 -bg "#1b2b34" -fg "#c0c5ce" -hlbg "#65737e" -hlfg "#d8dee9" -bc "#151718" -padding 480 -width 100 -line-margin 5 -font System\ San\ Francisco\ Display\ 16 -eh 2
+bindsym $mod+Tab exec rofi -show window -bg "#1b2b34" -fg "#c0c5ce" -hlbg "#65737e" -hlfg "#d8dee9" -bg-active "#6699cc" -fg-active "#1b2b34" -hlbg-active "#6699cc" -hlfg-active "#fac863" -bc "#151718" -padding 480 -width 100 -line-margin 5 -font System\ San\ Francisco\ Display\ 16 -eh 2
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
