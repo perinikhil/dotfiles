@@ -190,12 +190,12 @@ bar {
 }
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% # increase sound volume
+bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume 0 -5% # decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessUp  exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Touchpad controls
@@ -210,5 +210,5 @@ bindsym XF86AudioPrev exec playerctl previous
 # toggle backlight on and off using the Pause key
 bindsym Pause exec ~/.backlight.sh
 
-# multimonitor setting
-# exec --no-startup-id xrandr --output HDMI1 --auto --right-of LVDS1
+# lock screen command
+bindsym Mod1+Ctrl+Delete exec i3lock -ndc 1b2b34
