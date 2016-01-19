@@ -168,7 +168,8 @@ set $inactive-text-color #676E7D
 client.focused          #4c7899      #CDD3DE      #ffffff      #CDD3DE
 client.focused_inactive #333333      #5f676a      #ffffff      #5f676a
 client.unfocused        #333333      #222222      #888888      #222222
-client.urgent           #2f343a      #900000      #ffffff      #900000
+# client.urgent           #2f343a      #900000      #ffffff      #900000
+client.urgent           #ff0000      #900000      #ffffff      #ff0000
 client.placeholder      #000000      #0c0c0c      #ffffff      #0c0c0c
 
 client.background       #ffffff
@@ -211,4 +212,4 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym Pause exec ~/.backlight.sh
 
 # lock screen command
-bindsym Mod1+Ctrl+Delete exec i3lock -ndc 1b2b34
+bindsym Mod1+Ctrl+Delete exec --no-startup-id i3lock -ndc 1b2b34
