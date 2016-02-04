@@ -73,7 +73,6 @@
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'tpope/vim-fugitive'
   Plug 'bling/vim-airline'
-  Plug 'othree/yajs.vim'
   Plug 'tpope/vim-surround'
   Plug 'benekastah/neomake'
   Plug 'Valloric/YouCompleteMe'
@@ -81,9 +80,10 @@
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'Raimondi/delimitMate'
-  Plug 'mxw/vim-jsx', {'for': ['javascript']}
-  Plug 'scrooloose/nerdcommenter'
-  " Plug 'ervandew/supertab'
+  Plug 'tpope/vim-commentary'
+  Plug 'othree/yajs.vim', {'for': ['javascript', 'javascript.jsx']}
+  Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
+  Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
 
   call plug#end()
 
@@ -152,6 +152,5 @@
     let delimitMate_expand_cr = 1
     let delimitMate_expand_space = 1
 
-  "--nerdcommenter
-    let NERDSpaceDelims=1
-    nnoremap <leader>/ :call NERDComment(0, 'Toggle')<CR>
+  "--vim-jsx
+    let g:jsx_ext_required = 0
