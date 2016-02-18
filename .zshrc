@@ -91,3 +91,6 @@ alias vi="nvim"
 alias zshrc="vi ~/dotfiles/.zshrc"
 alias vimrc="vi ~/dotfiles/.vimrc"
 alias i3config="vi ~/dotfiles/i3"
+
+export NVM_DIR="/home/peri/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
