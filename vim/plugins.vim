@@ -1,22 +1,26 @@
 " vim-plug
   call plug#begin('~/.vim/plugged')
 
-  Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+  Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'tpope/vim-fugitive'
-  Plug 'bling/vim-airline'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'easymotion/vim-easymotion'
   Plug 'tpope/vim-surround'
   Plug 'benekastah/neomake'
   Plug 'Valloric/YouCompleteMe'
   Plug 'mattn/emmet-vim'
   Plug 'ntpeters/vim-better-whitespace'
-  Plug 'terryma/vim-multiple-cursors'
   Plug 'terryma/vim-smooth-scroll'
+  Plug 'terryma/vim-multiple-cursors'
   Plug 'Raimondi/delimitMate'
-  Plug 'othree/html5.vim', {'for': ['html']}
-  Plug 'othree/yajs.vim', {'for': ['javascript.jsx']}
-  Plug 'gavocanov/vim-js-indent', {'for': ['javascript.jsx']}
-  Plug 'mxw/vim-jsx', {'for': ['javascript.jsx']}
+  Plug 'tpope/vim-commentary'
+  Plug 'othree/html5.vim'
+  Plug 'othree/yajs.vim'
+  Plug 'gavocanov/vim-js-indent'
+  Plug 'mxw/vim-jsx'
+  Plug 'posva/vim-vue'
 
   call plug#end()
 
@@ -44,6 +48,11 @@
     let g:airline_theme = 'oceanicnext'
     set laststatus=2
 
+  "--vim-easymotion
+    let g:EasyMotion_do_mapping = 0
+    let g:EasyMotion_smartcase = 1
+    nmap s <Plug>(easymotion-s2)
+
   "--neomake
     let g:neomake_open_list = 2
     let g:neomake_list_height = 3
@@ -66,6 +75,9 @@
     let g:ycm_add_preview_to_completeopt = 1
     " let g:ycm_autoclose_preview_window_after_completion = 1
     let g:ycm_autoclose_preview_window_after_insertion = 1
+    let g:ycm_semantic_triggers = {
+      \ 'css,scss' : ['re!\w*']
+    \ }
     augroup PreviewOnBottom
       autocmd InsertEnter * set splitbelow
       autocmd InsertLeave * set splitbelow!
