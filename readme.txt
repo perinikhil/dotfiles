@@ -7,5 +7,5 @@ vim/plugins.vim : ~/.vim/plugins.vim
 i3  : ~/.config/i3/config
 i3blocks : ~/.config/i3/i3blocks.conf
 i3blocks-scripts : ~/scripts
-airline-theme : ~/.vim/plugged/vim-airline/autoload/airline/themes/oceanicnext.vim
+airline-theme : ~/.vim/plugged/vim-airline-themes/autoload/airline/themes/oceanicnext.vim
 

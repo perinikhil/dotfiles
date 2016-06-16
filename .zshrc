@@ -70,7 +70,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-oceanicnext.dark.sh"
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='atom'
+#   export EDITOR='nvimm'
 # fi
 
 # Compilation flags
